@@ -10,8 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build",
-    "publish": "npm publish"
+    "prepublish": "npm run build"
   },
   "author": "Kirill Vishenkov <vishkir1991@gmail.com>",
   "license": "ISC",
