@@ -1,6 +1,6 @@
 {
   "name": "brain-games-vishkir",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "brain games - games for your brain",
   "main": "src/bin/brain-games.js",
   "bin": {
