@@ -9,5 +9,7 @@ publish:
 	npm publish
 patch:
 	npm version patch
+lint:
+	npm run eslint
 
 .PHONY: test

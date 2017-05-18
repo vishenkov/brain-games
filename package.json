@@ -10,15 +10,27 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "eslint": "eslint src/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishenkov/project-lvl1-s98.git"
   },
   "author": "Kirill Vishenkov <vishkir1991@gmail.com>",
   "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.7"
+  },
   "devDependencies": {
     "babel-cli": ">=6.24.0",
     "babel-core": ">=6.24.0",
+    "babel-eslint": "^7.2.3",
     "babel-preset-env": ">=1.4.0",
     "babel-preset-stage-0": ">=6.24.0",
-    "readline-sync": "^1.4.7"
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "travis": "^0.1.1"
   }
 }
