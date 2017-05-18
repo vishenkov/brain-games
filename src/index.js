@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
+import colors from 'colors';
 
 export default () => {
-  console.log('May I have your name? ');
-  const name = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${name}!`);
+  const name = readlineSync.question(`May I have your ${'name'.blue}? `);
+  return name;
 };

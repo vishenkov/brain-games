@@ -2,24 +2,27 @@
   "name": "brain-games-vishkir",
   "version": "0.0.8",
   "description": "brain games - games for your brain",
-  "main": "src/bin/brain-games.js",
+  "main": "dist/index.js",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build",
-    "eslint": "eslint src/**"
+    "eslint": "eslint src/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vishenkov/project-lvl1-s98.git"
   },
+  "homepage": "https://github.com/vishenkov/project-lvl1-s98#readme",
   "author": "Kirill Vishenkov <vishkir1991@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.1.2",
     "readline-sync": "^1.4.7"
   },
   "devDependencies": {
