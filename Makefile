@@ -7,5 +7,7 @@ build:
 	npm run build
 publish:
 	npm publish
+patch:
+	npm version patch
 
 .PHONY: test
