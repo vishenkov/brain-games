@@ -1,0 +1,24 @@
+{
+  "name": "brain-games-vishkir",
+  "version": "0.0.3",
+  "description": "brain games - games for your brain",
+  "main": "src/bin/brain-games.js",
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublish": "npm run build",
+    "publish": "npm publish"
+  },
+  "author": "Kirill Vishenkov <vishkir1991@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": ">=6.24.0",
+    "babel-core": ">=6.24.0",
+    "babel-preset-env": ">=1.4.0",
+    "babel-preset-stage-0": ">=6.24.0"
+  }
+}
