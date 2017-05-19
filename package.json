@@ -1,6 +1,6 @@
 {
   "name": "brain-games-vishkir",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "brain games - games for your brain",
   "main": "dist/index.js",
   "bin": {
