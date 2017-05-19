@@ -8,11 +8,4 @@ console.log(`Answer ${colors.red('"yes"')} ${colors.bold('if')} ${colors.blue('n
 
 const name = greeting();
 
-let correctAnsCount = 0;
-while ((correctAnsCount < 3) && (game(name))) {
-  correctAnsCount += 1;
-}
-
-if (correctAnsCount === 3) {
-  console.log(`Congratulations, ${colors.bold(name)}!`);
-}
+game(name);

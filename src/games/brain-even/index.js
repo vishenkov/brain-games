@@ -2,11 +2,11 @@ import readlineSync from 'readline-sync';
 import colors from 'colors/safe';
 import { isEven, randomInteger } from '../../math/';
 
-const MAX_RANGE_NUMBER = 100;
-const MIN_RANGE_NUMBER = 1;
+const maxNumber = 100;
+const minNumber = 1;
 
-export default (name) => {
-  const number = randomInteger(MIN_RANGE_NUMBER, MAX_RANGE_NUMBER);
+const game = () => {
+  const number = randomInteger(minNumber, maxNumber);
   console.log(`Question: ${colors.blue(String(number))}`);
   const answer = readlineSync.question('Your answer: ');
   const solution = isEven(number) ? 'yes' : 'no';
@@ -15,7 +15,20 @@ export default (name) => {
     console.log('Correct!');
     return true;
   }
+  console.log(`'${colors.red(answer)}' is wrong answer ;(. Correct answer was '${colors.red(solution)}'.`);
+  return false;
+};
 
-  console.log(`'${colors.red(answer)}' is wrong answer ;(. Correct answer was '${colors.red(solution)}'.\nLet's try again, ${name}!`);
+export default (name) => {
+  let correctAnsCount = 0;
+  while ((correctAnsCount < 3) && (game())) {
+    correctAnsCount += 1;
+  }
+
+  if (correctAnsCount === 3) {
+    console.log(`Congratulations, ${colors.bold(name)}!`);
+    return true;
+  }
+  console.log(`Let's try again, ${name}!`);
   return false;
 };
