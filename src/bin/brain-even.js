@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 import colors from 'colors/safe';
-import greeting from '..';
+import { welcomeMsg, getName } from '..';
 import game from '../games/brain-even';
 
-console.log(`Welcome ${colors.bold('to')} the Brain Games!`);
+welcomeMsg();
+
 console.log(`Answer ${colors.red('"yes"')} ${colors.bold('if')} ${colors.blue('number')} even otherwise answer ${colors.red('"no"')}.\n`);
 
-const name = greeting();
+const name = getName();
 
 game(name);

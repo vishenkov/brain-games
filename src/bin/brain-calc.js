@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 import colors from 'colors/safe';
-import greeting from '..';
+import { welcomeMsg, getName } from '..';
 import game from '../games/brain-calc';
 
-console.log(`Welcome ${colors.bold('to')} the Brain Games!`);
+welcomeMsg();
+
 console.log(`What is the ${colors.red('result')} of the ${colors.bold('expression')}?\n`);
 
-const name = greeting();
+const name = getName();
 
 game(name);

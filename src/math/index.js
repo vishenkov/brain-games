@@ -14,7 +14,6 @@ const randomInteger = (min, max) => {
 };
 
 const randomOperation = (num1, num2) => {
-
   const operation = randomInteger(0, 2);
   switch (operation) {
     case 0: return pairs.cons('-', (num1 - num2));
