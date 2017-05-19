@@ -1,3 +1,5 @@
+import * as pairs from 'hexlet-pairs';
+
 const isEven = (number) => {
   if (number % 2 === 0) {
     return true;
@@ -11,4 +13,14 @@ const randomInteger = (min, max) => {
   return rand;
 };
 
-export { isEven, randomInteger };
+const randomOperation = (num1, num2) => {
+
+  const operation = randomInteger(0, 2);
+  switch (operation) {
+    case 0: return pairs.cons('-', (num1 - num2));
+    case 1: return pairs.cons('*', (num1 * num2));
+    default: return pairs.cons('+', (num1 + num2));
+  }
+};
+
+export default { pairs, randomOperation, randomInteger, isEven };
