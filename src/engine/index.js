@@ -1,10 +1,26 @@
+import * as pairs from 'hexlet-pairs';
 import readlineSync from 'readline-sync';
 import colors from 'colors/safe';
-import math from '../math/';
+
+const welcomeMsg = () => {
+  console.log(`Welcome ${colors.bold('to')} the Brain Games!`);
+};
+
+const getName = () => {
+  const name = readlineSync.question(`May I have your ${colors.blue('name')}? `);
+  return name;
+};
+
+export const introduction = (rules) => {
+  welcomeMsg();
+  console.log(`${rules}\n`);
+  const name = getName();
+  return name;
+};
 
 const game = (logicResults) => {
-  const question = math.pairs.car(logicResults);
-  const solution = math.pairs.cdr(logicResults);
+  const question = pairs.car(logicResults);
+  const solution = pairs.cdr(logicResults);
 
   console.log(`Question: ${colors.blue(question)}`);
   const answer = readlineSync.question('Your answer: ');
@@ -17,7 +33,9 @@ const game = (logicResults) => {
   return false;
 };
 
-export default (logicResults, name) => {
+export const engine = (rules, logicResults) => {
+  const name = introduction(rules);
+
   let correctAnsCount = 0;
   while ((correctAnsCount < 3) && (game(logicResults()))) {
     correctAnsCount += 1;
