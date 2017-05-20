@@ -2,6 +2,7 @@ import colors from 'colors/safe';
 import even from './games/brain-even';
 import calc from './games/brain-calc';
 import gcd from './games/brain-gcd';
+import balance from './games/brain-balance';
 import { engine, introduction } from './engine';
 
 export default (gameName) => {
@@ -17,6 +18,10 @@ export default (gameName) => {
     case 'brain-gcd': {
       const rules = `Find the ${colors.red.bold('greatest')} ${colors.bold('common divisor')} of given ${colors.red('numbers')}.`;
       return engine(rules, gcd);
+    }
+    case 'brain-balance': {
+      const rules = `${colors.red.bold('Balance')} the given ${colors.bold('number')}.`;
+      return engine(rules, balance);
     }
     default: {
       const name = introduction('');
