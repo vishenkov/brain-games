@@ -7,29 +7,37 @@
 ## Games
 ### Brain even
 > Answer if number is *even*.
-
-> setup `brain-even`
+#### setup 
+```
+brain-even
+```
 
 ### Brain calc
 > Answer the result of the *expression*.
-
-> setup `brain-calc`
-
+#### setup 
+```
+brain-calc
+```
 ### Brain gcd
 > Find the *greatest common divisor* of given numbers.
-
-> setup `brain-gcd`
+#### setup 
+```
+brain-gcd
+```
 
 ### Brain progression
 > Find the *missing number* of given progression.
-
-> setup `brain-progression`
+#### setup 
+```
+brain-progression
+```
 
 ### Brain prime
 > Answer if number is *prime*.
-
-> setup `brain-prime`
-
+#### setup 
+```
+brain-prime
+```
 
 ## Setup
 
