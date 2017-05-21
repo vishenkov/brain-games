@@ -1,32 +1,29 @@
+import { car, cdr } from 'hexlet-pairs';
+import readlineSync from 'readline-sync';
 import colors from 'colors/safe';
-import even from './games/brain-even';
-import calc from './games/brain-calc';
-import gcd from './games/brain-gcd';
-import balance from './games/brain-balance';
-import { engine, introduction } from './engine';
 
-export default (gameName) => {
-  switch (gameName) {
-    case 'brain-even': {
-      const rules = `Answer ${colors.red('"yes"')} ${colors.bold('if')} ${colors.blue('number')} even otherwise answer ${colors.red('"no"')}.`;
-      return engine(rules, even);
-    }
-    case 'brain-calc': {
-      const rules = `What is the ${colors.red('result')} of the ${colors.bold('expression')}?`;
-      return engine(rules, calc);
-    }
-    case 'brain-gcd': {
-      const rules = `Find the ${colors.red.bold('greatest')} ${colors.bold('common divisor')} of given ${colors.red('numbers')}.`;
-      return engine(rules, gcd);
-    }
-    case 'brain-balance': {
-      const rules = `${colors.red.bold('Balance')} the given ${colors.bold('number')}.`;
-      return engine(rules, balance);
-    }
-    default: {
-      const name = introduction('');
-      console.log(`Hello, ${name}!`);
-      return true;
+export default (logic, rules) => {
+  console.log(`Welcome ${colors.bold('to')} the Brain Games!`);
+  console.log(`${rules}\n`);
+
+  const name = readlineSync.question(`May I have your ${colors.blue('name')}? `);
+
+  for (let i = 0; i < 3; i += 1) {
+    const task = logic();
+    const question = car(task);
+    const solution = cdr(task);
+
+    console.log(`Question: ${colors.blue(question)}`);
+    const answer = readlineSync.question('Your answer: ');
+
+    if (answer === solution) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${colors.red(answer)}' is wrong answer ;(. Correct answer was '${colors.red(solution)}'.`);
+      console.log(`Let's try again, ${colors.bold(name)}!`);
+      return false;
     }
   }
+  console.log(`Congratulations, ${colors.bold(name)}!`);
+  return true;
 };

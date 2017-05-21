@@ -1,13 +1,18 @@
-import * as pairs from 'hexlet-pairs';
-import * as math from '../math/';
+import { cons } from 'hexlet-pairs';
+import colors from 'colors/safe';
+import { randomInteger, balance } from '../math/';
+import engine from '..';
 
 const maxNumber = 10000;
 const minNumber = 10;
+const rules = `${colors.red.bold('Balance')} the given ${colors.bold('number')}.`;
 
-export default () => {
-  const number = math.randomInteger(minNumber, maxNumber);
-  const solution = math.balance(number);
+const logic = () => {
+  const number = randomInteger(minNumber, maxNumber);
+  const solution = balance(number);
 
   const question = `${number}`;
-  return pairs.cons(question, solution);
+  return cons(question, solution);
 };
+
+export default () => engine(logic, rules);

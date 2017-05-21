@@ -1,15 +1,21 @@
-import * as pairs from 'hexlet-pairs';
-import * as math from '../math/';
+import { cons } from 'hexlet-pairs';
+import colors from 'colors/safe';
+import { randomInteger, getGcd } from '../math/';
+import engine from '..';
 
 const maxNumber = 50;
 const minNumber = 1;
 
-export default () => {
-  const num1 = math.randomInteger(minNumber, maxNumber);
-  const num2 = math.randomInteger(minNumber, maxNumber);
+const rules = `Find the ${colors.red.bold('greatest')} ${colors.bold('common divisor')} of given ${colors.red('numbers')}.`;
 
-  const solution = String(math.getGcd(num1, num2));
+const logic = () => {
+  const num1 = randomInteger(minNumber, maxNumber);
+  const num2 = randomInteger(minNumber, maxNumber);
+
+  const solution = String(getGcd(num1, num2));
 
   const question = `${num1} ${num2}`;
-  return pairs.cons(question, solution);
+  return cons(question, solution);
 };
+
+export default () => engine(logic, rules);
