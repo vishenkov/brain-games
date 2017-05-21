@@ -98,3 +98,21 @@ export const getProgression = (a0, d, n) => {
   }
   return a;
 };
+
+export const isPrime = (num) => {
+  let i = 2;
+
+  if (num === 2) {
+    return true;
+  }
+
+  const sqrtN = Math.sqrt(num);
+  while (i <= sqrtN) {
+    if ((num % i) === 0) {
+      return false;
+    }
+    i += 1;
+  }
+
+  return true;
+};
