@@ -88,3 +88,13 @@ export const balance = (number) => {
   }
   return splitedNumber.join('');
 };
+
+export const getProgression = (a0, d, n) => {
+  // An=A1+d(n-1)
+  const a = [];
+  a[0] = a0;
+  for (let i = 1; i < n; i += 1) {
+    a[i] = a[i - 1] + d;
+  }
+  return a;
+};
